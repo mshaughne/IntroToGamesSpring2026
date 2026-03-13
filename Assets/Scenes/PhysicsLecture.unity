@@ -459,6 +459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 756141637}
+  - component: {fileID: 756141638}
   m_Layer: 0
   m_Name: CameraPivot
   m_TagString: Untagged
@@ -482,6 +483,20 @@ Transform:
   - {fileID: 2028031247}
   m_Father: {fileID: 960882622}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &756141638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756141636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df392a133c8e8f459a0e4b157a50661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 960882622}
+  mouseSensitivity: 200
 --- !u!1 &960882617
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,6 +511,7 @@ GameObject:
   - component: {fileID: 960882619}
   - component: {fileID: 960882618}
   - component: {fileID: 960882623}
+  - component: {fileID: 960882624}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -528,7 +544,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &960882619
 CapsuleCollider:
@@ -628,7 +644,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960882617}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c4585aef52f6dd4dbdf9674806334f7, type: 3}
   m_Name: 
@@ -644,6 +660,21 @@ MonoBehaviour:
   cameraPivot: {fileID: 0}
   cameraTransform: {fileID: 0}
   mouseSensitivity: 200
+--- !u!114 &960882624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960882617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a72483d555914e545b35ddf7600af722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 6
+  rotSpeed: 12
+  cameraPivot: {fileID: 756141637}
 --- !u!1 &992106013
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +971,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028031244}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb5fd2dfd43637042b05f2c7498bc3fa, type: 3}
   m_Name: 
