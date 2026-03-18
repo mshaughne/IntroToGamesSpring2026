@@ -6,8 +6,11 @@ public class ThirdPersonPlayerMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 6f;
     [SerializeField] float rotSpeed = 12f;
+    [SerializeField] float jumpForce = 300f;
 
     [SerializeField] Transform cameraPivot;
+    [SerializeField] Transform groundCheckPos;
+    [SerializeField] LayerMask groundLayers;
     private Rigidbody rb;
 
     float vertical;
@@ -24,6 +27,14 @@ public class ThirdPersonPlayerMovement : MonoBehaviour
     {
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
+
+        if(Input.GetButtonDown("Jump"))
+        {
+            if(Physics.Raycast(groundCheckPos.position, Vector3.down, 0.1f, groundLayers))
+            {
+                rb.AddForce(0, jumpForce, 0);
+            }
+        }
     }
 
     private void FixedUpdate()

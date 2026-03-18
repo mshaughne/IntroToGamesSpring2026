@@ -19,4 +19,13 @@ public class EnemyFollowPlayer : MonoBehaviour
     {
         agent.SetDestination(target.position);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // was the other object the player?
+        if(collision.collider.gameObject.CompareTag("Player"))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        }
+    }
 }
