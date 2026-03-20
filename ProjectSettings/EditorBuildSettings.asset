@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 5e650302429394a4290b6c27b0066400
+  - enabled: 1
     path: Assets/Scenes/PhysicsLecture.unity
     guid: 1a228a505ad6d1f4db57af77a227bdd8
   m_configObjects: {}

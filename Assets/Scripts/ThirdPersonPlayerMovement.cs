@@ -20,6 +20,10 @@ public class ThirdPersonPlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        // cursor locks to center of screen
+        Cursor.lockState = CursorLockMode.Locked;
+        // make the cursor invisible
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -34,6 +38,11 @@ public class ThirdPersonPlayerMovement : MonoBehaviour
             {
                 rb.AddForce(0, jumpForce, 0);
             }
+        }
+
+        if(Input.GetButtonDown("Cancel"))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         }
     }
 
