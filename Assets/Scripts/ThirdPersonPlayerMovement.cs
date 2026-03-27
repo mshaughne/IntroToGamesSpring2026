@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ThirdPersonPlayerMovement : MonoBehaviour
 {
+
     [SerializeField] float moveSpeed = 6f;
-    [SerializeField] float rotSpeed = 12f;
     [SerializeField] float jumpForce = 300f;
 
     [SerializeField] Transform cameraPivot;
