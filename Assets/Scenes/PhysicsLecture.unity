@@ -1654,6 +1654,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 960882622}
+    - target: {fileID: 2558351931208300655, guid: d872f1267e2d55b4aa73fdfc30e99763,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7929336535085673036, guid: d872f1267e2d55b4aa73fdfc30e99763,
         type: 3}
       propertyPath: m_Name
@@ -1712,8 +1717,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7929336535085673036, guid: d872f1267e2d55b4aa73fdfc30e99763,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 574575396380222905}
   m_SourcePrefab: {fileID: 100100000, guid: d872f1267e2d55b4aa73fdfc30e99763, type: 3}
+--- !u!1 &574575396380222904 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7929336535085673036, guid: d872f1267e2d55b4aa73fdfc30e99763,
+    type: 3}
+  m_PrefabInstance: {fileID: 574575396380222903}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &574575396380222905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574575396380222904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32ea5e25819d1a4484f18af48a2a676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPlayer: {fileID: 0}
+  chaseRange: 10
+  stopChaseRange: 15
+  patrolDistance: 10
+  idleTime: 3
+  idleTimer: 0
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &3676234263704984673
 PrefabInstance:
   m_ObjectHideFlags: 0

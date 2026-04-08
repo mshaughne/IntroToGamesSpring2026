@@ -41,6 +41,7 @@ public class EnemyFSM : MonoBehaviour
                 break;
             case EnemyStates.Patrol:
                 Debug.Log("Enemy Patrolling");
+                PatrolState();
                 break;
             case EnemyStates.Chase:
                 Debug.Log("Enemy Chasing");
@@ -80,7 +81,15 @@ public class EnemyFSM : MonoBehaviour
 
     void PatrolState()
     {
+        if (!isPatrolTargetSet) FindPatrolTarget();
+        if (isPatrolTargetSet) agent.SetDestination(patrolTarget);
 
+        Vector3 distanceToPatrol = transform.position - patrolTarget;
+        if (distanceToPatrol.magnitude <= 1f)
+        {
+            isPatrolTargetSet = false;
+            currentState = EnemyStates.Idle;
+        }
     }
 
     void ChaseState()
@@ -101,5 +110,10 @@ public class EnemyFSM : MonoBehaviour
 
         patrolTarget = new(transform.position.x + randomX,
             transform.position.y, transform.position.z + randomZ);
+
+        if(Physics.Raycast(patrolTarget, Vector3.down, 2f, groundLayers))
+        {
+            isPatrolTargetSet = true;
+        }
     }
 }
