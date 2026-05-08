@@ -10,6 +10,13 @@ public class BallAnimation : MonoBehaviour
 	[SerializeField] AudioSource src;
 	[SerializeField] AudioClip jumpSound, pressSound, releaseSound;
 
+	[Header("Particles")]
+	[SerializeField] GameObject particlePrefab;
+
+	[Header("Screen Shake")]
+	[SerializeField] float duration = 0.5f;
+	[SerializeField] float intensity = 0.5f;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -42,5 +49,12 @@ public class BallAnimation : MonoBehaviour
 	{
 		src.clip = jumpSound;
 		src.Play();
+	}
+
+	public void SpawnParticles()
+	{
+		Instantiate(particlePrefab, transform.position, Quaternion.identity);
+
+		GetComponent<CameraShake>().CamShakeStart(duration, intensity);
 	}
 }
